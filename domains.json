@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Information Architecture",
+    "shortDescription": "Concerns organizing and structuring content to make it easy for users to navigate and find information.",
+    "fullDescription": [
+      "Concerns organizing and structuring content to make it easy for users to navigate and find information.",
+      "It includes defining hierarchies, navigation systems, and labeling."
+    ]
+  },
+  {
+    "title": "User Interface Design and Interactivity",
+    "shortDescription": "Concerns the simplicity, ease-of-use, intuitiveness, and consistency of the platform for all users.",
+    "fullDescription": [
+      "Concerns the simplicity, ease-of-use, intuitiveness, and consistency of the platform for all users.",
+      "A skilled practitioner is adept with access."
+    ]
+  },
+  {
+    "title": "Design Advocacy",
+    "shortDescription": "Concerns the ability to effectively communicate design decisions, ideas, and concepts to stakeholders and team members.",
+    "fullDescription": [
+      "Concerns the ability to effectively communicate design decisions, ideas, and concepts to stakeholders and team members.",
+      "It involves advocating."
+    ]
+  },
+  {
+    "title": "User Research",
+    "shortDescription": "Concerns gathering insights into user needs, behaviors, and motivations.",
+    "fullDescription": [
+      "Concerns gathering insights into user needs, behaviors, and motivations.",
+      "It employs qualitative and quantitative methods to ensure that the product."
+    ]
+  },
+  {
+    "title": "Design Methodology",
+    "shortDescription": "Concerns the ability to select appropriate design methodologies and deliverables and then plan the execution for a scope of work.",
+    "fullDescription": [
+      "Concerns the ability to select appropriate design methodologies and deliverables and then plan the execution for a scope of work.",
+      "Our team values."
+    ]
+  },
+  {
+    "title": "Business & Product Sense",
+    "shortDescription": "Concerns the ability to align design decisions with both user needs and business goals.",
+    "fullDescription": [
+      "Concerns the ability to align design decisions with both user needs and business goals.",
+      "It involves understanding the strategic role of design in meeting business objectives."
+    ]
+  },
+  {
+    "title": "Tool Fluency",
+    "shortDescription": "Concerns a designer's ability to select and effectively use design tools.",
+    "fullDescription": [
+      "Concerns a designer's ability to select and effectively use design tools, data tools, prototyping tools, presentation tools, writing tools, and more."
+    ]
+  }
+]
