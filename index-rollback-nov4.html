@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Self-Evaluation Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Self-evaluation tool: Estimated UX Proficiency</h1>
+    <div id="evaluation-form">
+        <div id="domains">
+            <div class="domain" id="domain-1">
+                <div class="label-and-slider">
+                  <label class="domain-lab" for="domain-1-input">Information Architecture</label>
+                <input type="range" min="1" max="5" value="1" id="domain-1-input">
+               <span class="proficiency-value">1</span>
+              </div>
+               <p class="description" data-full-text="Concerns organizing and structuring content to make it easy for users to navigate and find information. It includes defining hierarchies, navigation systems, and workflows in support of user tasks and goals. A seasoned practitioner can conceptualize and visualize ideas and structures. They are fluent in taxonomy, nomenclature, navigability, searchability, hierarchical and non-hierarchical orders, linearity, nonlinearity, relationship-mapping, and more.">
+                Concerns organizing and structuring content to make it easy for users to navigate and find information. It includes
+                <span class="ellipsis">...</span><a href="#" class="show-more">more</a>
+                </p>
+            </div>
+            <div class="domain" id="domain-2">
+                <div class="label-and-slider">
+                  <label class="domain-lab" for="domain-2-input">User Interface Design and Interactivity</label>
+                <input type="range" min="1" max="5" value="1" id="domain-2-input">
+                <span class="proficiency-value">1</span>
+              </div>
+               <p class="description" data-full-text="Concerns the simplicity, ease-of-use, intuitiveness, and consistency of the platform for all users. A skilled practitioner is adept with accessibility, typographic hierarchy, grouping, white space, color, design patterns, interaction paradigms, layouts, responsive and adaptive design, design systems and content style guides, as well as identifying and eliminating unnecessary elements from an interface.">
+               Concerns the simplicity, ease-of-use, intuitiveness, and consistency of the platform for all users. A skilled practitioner<span class="ellipsis">...</span><a href="#" class="show-more">more</a>
+                </p>
+            </div>
+            <div class="domain" id="domain-3">
+                <div class="label-and-slider">
+                  <label class="domain-lab" for="domain-3-input">Design Advocacy</label>
+                <input type="range" min="1" max="5" value="1" id="domain-3-input">
+                <span class="proficiency-value">1</span>
+              </div>
+               <p class="description" data-full-text="Concerns the ability to effectively communicate design decisions, ideas, and concepts to stakeholders and team members. It involves advocating for user needs, building a compelling case for design choices, and negotiating with cross-functional teams to achieve optimal outcomes. Strong advocacy skills help ensure that user-centered design is understood, supported, and implemented effectively throughout the product development process.">
+                Concerns the ability to effectively communicate design decisions, ideas, and concepts to stakeholders and team members
+                <span class="ellipsis">...</span><a href="#" class="show-more">more</a>
+                </p>
+            </div>
+            <div class="domain" id="domain-4">
+                <div class="label-and-slider">
+                  <label class="domain-lab" for="domain-4-input">User Research</label>
+                <input type="range" min="1" max="5" value="1" id="domain-4-input">
+                <span class="proficiency-value">1</span>
+              </div>
+               <p class="description" data-full-text="Concerns gathering insights into user needs, behaviors, and motivations. It employs qualitative and quantitative methods to ensure that the product addresses real user needs and delivers meaningful solutions. A skilled practitioner can identify and define a research need, match research methods to research needs, conduct research, evaluate research data, draw conclusions, and make credible recommendations for the experience that a team can act on..">
+                Concerns gathering insights into user needs, behaviors, and motivations. It employs qualitative and quantitative
+                <span class="ellipsis">...</span><a href="#" class="show-more">more</a>
+                </p>
+            </div>
+            <div class="domain" id="domain-5">
+                <div class="label-and-slider">
+                  <label class="domain-lab" for="domain-5-input">Design Methodology</label>
+                <input type="range" min="1" max="5" value="1" id="domain-5-input">
+                <span class="proficiency-value">1</span>
+              </div>
+               <p class="description" data-full-text="Concerns the ability to select appropriate design methodologies and deliverables and then plan the execution for a scope of work. Our team values lean and iterative approaches but understand there is no one-size-fits-all. A skilled practitioner will be adept at synthesizing user needs, business requirements, time constraints, and technical constraints into a workable plan of action. A skilled practitioner also recognizes when a plan needs to be revisited or reevaluated and quickly adjusts..">
+               Concerns the ability to select appropriate design methodologies and deliverables and then plan the execution for a scope of work
+                <span class="ellipsis">...</span><a href="#" class="show-more">more</a>
+                </p>
+            </div>
+            <div class="domain" id="domain-6">
+                <div class="label-and-slider">
+                  <label class="domain-lab" for="domain-6-input">Business & Product Sense</label>
+                <input type="range" min="1" max="5" value="1" id="domain-6-input">
+                <span class="proficiency-value">1</span>
+              </div>
+               <p class="description" data-full-text="Concerns the ability to align design decisions with both user needs and business goals. It involves understanding the strategic role of design in meeting business objectives, prioritizing design activities based on their impact, and ensuring that design contributes meaningfully to the product's success. A skilled practitioner makes informed decisions that balance user value and business outcomes to drive the experience forward..">
+                Concerns the ability to align design decisions with both user needs and business goals. It involves understanding the strategic role of design in meeting business objectives
+                <span class="ellipsis">...</span><a href="#" class="show-more">more</a>
+                </p>
+            </div>
+            <div class="domain" id="domain-7">
+                <div class="label-and-slider">
+                  <label class="domain-lab" for="domain-7-input">Tool Fluency</label>
+                <input type="range" min="1" max="5" value="1" id="domain-7-input">
+                <span class="proficiency-value">1</span>
+              </div>
+               <p class="description" data-full-text="Concerns a designer's ability to select and effectively use design tools, data tools, prototyping tools, presentation tools, writing tools, and more. These are the hard skills that open doors to more effective collaboration with developers and product managers, and in turn will help achieve the greatest value for our users. Being good at Figma is a basic entry-level requirement to work as a professional designer. To gain mastery in this domain, you will need to demonstrate skill with data, prototyping, AI, front end frameworks and approaches, presentation tools, and tabular data tools like Excel..">
+                Concerns a designer's ability to select and effectively use design tools, data tools, prototyping tools, presentation tools, writing tools, and more. These are the hard skills that open
+                <span class="ellipsis">...</span><a href="#" class="show-more">more</a>
+                </p>
+            </div>
+        </div>
+        <h2 style="display:none;">Estimated Proficiency: <span id="total-proficiency">7</span></h2>
+    </div>
+    <div class="visualization-outer">
+        <div id="visualization-inner">
+            <div id="gradientOverlay" class="gradient-overlay">
+                <div id="totalNumber" class="totalNumber">7</div>
+                <div class="yourEstimate">estimated proficiency (sum)</div>
+            </div>
+            <div class="grade-label" style="top: 8%;">Grade 10</div>
+            <div class="grade-label" style="top: 25%;">Grade 9</div>
+            <div class="grade-label" style="top: 40%;">Grade 8</div>
+            <div class="grade-label" style="bottom: 42%;">Grade 7</div>
+            <div class="grade-label" style="bottom: 28%;">Grade 6</div>
+            <div class="grade-label" style="bottom: 12%;">Grade 5</div>
+        </div>
+    </div>
+    <script src="function.js"></script>
+</body>
+</html>
