@@ -1,0 +1,204 @@
+/********** General Styles **********/
+    body {
+        font-family: system-ui;
+        margin: 0 auto;
+        padding: 0 auto;
+        font-weight: 400;
+    }
+
+    h1,h2,h3,h4 {
+        font-weight: 400;
+    }
+
+    h1 {
+        margin-top: 0px;
+        padding: 10px;
+        font-size: 1.6em;
+        top:0px;
+        position: fixed;
+        background-color:#fff;
+        width:100%;
+        z-index:10;
+    }
+
+/********** Form Styles **********/
+
+    #evaluation-form {
+        margin-top: 40px;
+        padding: 10px;
+        height:100%;
+        width: 65%;
+    }
+    .domain {
+        margin-top: 1rem;
+    }
+
+    .domain:first-child{
+        margin-top: 0px;
+    }
+
+    .label-and-slider {
+        padding-right: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0px; /* Space between slider row and description */
+    }
+
+    .domain-lab {
+        font-weight: 400;
+        font-size: 1.3rem;
+        margin-right: auto; /* Pushes the slider and proficiency value to the right */
+        white-space: nowrap;
+        overflow:hidden;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .description {
+        padding-right: 2rem;
+        font-size: .92rem;
+        line-height: 1.4rem;
+        letter-spacing: 1px;
+        margin-bottom: 0;
+        margin-top: .5rem;
+        position: relative;
+        color:#515151;
+    }
+
+    .ellipsis {
+        display: inline; /* Default to visible when text is truncated */
+        margin-right: -4px;
+    }
+
+    .full-description {
+        display: none; /* Initially hidden */
+    }
+
+    a.show-more, a.show-less {
+        color: #282828;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight:500;
+    }
+
+    a.show-more:hover, a.show-less:hover {
+        text-decoration: underline;
+    }
+
+/********** Range Input Styles **********/
+    /*Range Reset*/
+    input[type="range"] {
+        min-width: 16rem; /* Adjust width if needed */
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        cursor: pointer;
+        margin: 0;
+    }
+
+    input[type="range"],
+    .proficiency-value {
+        margin-left: 10px;
+    }
+
+    .proficiency-value {
+        font-size:1.5rem;
+        font-weight:400;
+        margin-left: 10px; /* 10px space between slider and value */
+    }
+
+    /* Removes default focus */
+    input[type="range"]:focus {
+      outline: none;
+    }
+
+    /* slider track */
+    input[type="range"]::-webkit-slider-runnable-track {
+       background-color: #eee;
+       border-radius: 1rem;
+       height: 1rem;  
+    }
+
+    /* slider thumb */
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; /* Override default look */
+       appearance: none;
+       margin-top: -2.5px; /* Centers thumb on the track */
+       /*custom styles*/
+       background-color: #6953C1;
+       height: 1.2rem;
+       width: 1.2rem;
+       border-radius: 1.2rem;
+    }
+
+    input[type="range"]:focus::-webkit-slider-thumb {   
+      border: 1px solid #4B3295;
+      outline: 2px solid #4B3295;
+      outline-offset: 0.125rem; 
+    }
+
+/********** Visualization Styles **********/
+    .visualization-outer {
+        z-index: 11;
+        position: fixed;
+        height: -webkit-fill-available;
+        width: 35%;
+        top:0;
+        right:0;
+        background: #fff;
+        border-left: 1px solid #fff;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        margin-bottom:10px;
+        padding-left:0px;
+        padding-right:0px;
+        overflow: hidden;
+        box-shadow: -3px 0px 8px 0px rgba(0, 0, 0, 0.06);
+    }
+
+    #visualization-inner {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        width: 100%;
+        background: linear-gradient(180deg,transparent, #EBE2FF, transparent);
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        transition: top 0.3s ease, height 0.3s ease;
+        border: 0px solid #FF0000;
+        z-index: 0;
+        color: #282828;
+    }
+
+    .grade-label {
+        position: absolute;
+        right: 15px;
+        font-size: .85rem;
+        color: #515151;
+        font-weight: 200;
+        width:280px;
+        text-align: right;
+    }
+
+    div.totalNumber{
+        font-size: 2.25rem;
+        font-weight: 400;
+    }
+
+    div.yourEstimate{
+        font-size: .9rem;
+        font-weight:300;
+    }
