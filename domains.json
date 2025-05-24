@@ -1,57 +1,81 @@
-[
-  {
-    "title": "Information Architecture",
-    "shortDescription": "Concerns organizing and structuring content to make it easy for users to navigate and find information.",
-    "fullDescription": [
-      "Concerns organizing and structuring content to make it easy for users to navigate and find information.",
-      "It includes defining hierarchies, navigation systems, and labeling."
-    ]
-  },
-  {
-    "title": "User Interface Design and Interactivity",
-    "shortDescription": "Concerns the simplicity, ease-of-use, intuitiveness, and consistency of the platform for all users.",
-    "fullDescription": [
-      "Concerns the simplicity, ease-of-use, intuitiveness, and consistency of the platform for all users.",
-      "A skilled practitioner is adept with access."
-    ]
-  },
-  {
-    "title": "Design Advocacy",
-    "shortDescription": "Concerns the ability to effectively communicate design decisions, ideas, and concepts to stakeholders and team members.",
-    "fullDescription": [
-      "Concerns the ability to effectively communicate design decisions, ideas, and concepts to stakeholders and team members.",
-      "It involves advocating."
-    ]
-  },
-  {
-    "title": "User Research",
-    "shortDescription": "Concerns gathering insights into user needs, behaviors, and motivations.",
-    "fullDescription": [
-      "Concerns gathering insights into user needs, behaviors, and motivations.",
-      "It employs qualitative and quantitative methods to ensure that the product."
-    ]
-  },
-  {
-    "title": "Design Methodology",
-    "shortDescription": "Concerns the ability to select appropriate design methodologies and deliverables and then plan the execution for a scope of work.",
-    "fullDescription": [
-      "Concerns the ability to select appropriate design methodologies and deliverables and then plan the execution for a scope of work.",
-      "Our team values."
-    ]
-  },
-  {
-    "title": "Business & Product Sense",
-    "shortDescription": "Concerns the ability to align design decisions with both user needs and business goals.",
-    "fullDescription": [
-      "Concerns the ability to align design decisions with both user needs and business goals.",
-      "It involves understanding the strategic role of design in meeting business objectives."
-    ]
-  },
-  {
-    "title": "Tool Fluency",
-    "shortDescription": "Concerns a designer's ability to select and effectively use design tools.",
-    "fullDescription": [
-      "Concerns a designer's ability to select and effectively use design tools, data tools, prototyping tools, presentation tools, writing tools, and more."
-    ]
-  }
-]
+{
+  "domains": [
+    {
+      "name": "Information Architecture",
+      "description": "Organizes and structures content to make it easy for users to navigate and find information. This includes defining hierarchies, navigation systems, and workflows to support user tasks and goals.",
+      "criteria": [
+        "Hierarchy and structure: Content is organized logically with clear paths and grouping.",
+        "Navigability: Navigation systems are intuitive and minimize cognitive load.",
+        "Taxonomy: Terminology is consistent, understandable, and aligned with user expectations.",
+        "Searchability: Systems facilitate quick and accurate content retrieval.",
+        "Adaptability: Solutions scale effectively with changes in content or user needs."
+      ]
+    },
+    {
+      "name": "User Interface Design and Interactivity",
+      "description": "Focuses on simplicity, ease-of-use, and consistency for all users. It includes accessibility, layout, and responsive design to create intuitive interfaces.",
+      "criteria": [
+        "Accessibility: Best practices are embraced and implemented (within the constraints of the project).",
+        "Ease of use: Designs are easy to use by the intended audience on their given surfaces.",
+        "Visual appeal: Design work is simple, clean, scannable, and organized in a way that makes information easy to parse.",
+        "Standardization: Design system components are used and modifications only made where necessary.",
+        "UX writing: All available tools are used to ensure the written content in designs is clear, simple, and follows HHS guidelines."
+      ]
+    },
+    {
+      "name": "Design Advocacy",
+      "description": "Encompasses effectively communicating design decisions and advocating for user needs to stakeholders and team members. It ensures user-centered design is supported and implemented.",
+      "criteria": [
+        "Clarity: Design decisions are presented with clear, well-supported reasoning.",
+        "Empathy: Advocacy consistently reflects a deep understanding of user needs.",
+        "Collaboration: Fosters alignment with stakeholders while maintaining design integrity.",
+        "Negotiation: Balances user-centered outcomes with technical and business constraints.",
+        "Persuasiveness: Effectively communicates the value and impact of design solutions."
+      ]
+    },
+    {
+      "name": "User Research",
+      "description": "Involves gathering insights into user needs, behaviors, and motivations using qualitative and quantitative methods to inform meaningful solutions.",
+      "criteria": [
+        "Methodology: Appropriate research methods are selected and applied effectively.",
+        "Execution: Research activities are thorough, ethical, and well-documented.",
+        "Analysis: Data is synthesized into actionable insights.",
+        "Communication: Findings are presented in a way that influences design and strategy.",
+        "Impact: Research directly informs meaningful design improvements."
+      ]
+    },
+    {
+      "name": "Design Methodology",
+      "description": "Entails selecting appropriate design methodologies, planning their execution, and adapting as needed. It synthesizes user needs, business goals, and constraints into actionable plans.",
+      "criteria": [
+        "Planning: Clear, actionable plans are created for design initiatives.",
+        "Flexibility: Adjustments are made efficiently in response to new information or challenges.",
+        "Integration: Plans consider user needs, business goals, and technical constraints.",
+        "Iteration: Feedback is incorporated effectively at every stage.",
+        "Deliverables: Outputs align with project goals and stakeholder expectations."
+      ]
+    },
+    {
+      "name": "Business & Product Sense",
+      "description": "Aligns design decisions with user needs and business goals to ensure the product's success. Balances user value with business outcomes.",
+      "criteria": [
+        "Alignment: Design solutions directly support business and product goals.",
+        "Prioritization: Focuses on high-impact design opportunities.",
+        "Feasibility: Considers resource and technical constraints in decision-making.",
+        "Metrics: Designs are evaluated using relevant success metrics.",
+        "Strategy: Contributes to product roadmaps and long-term business objectives."
+      ]
+    },
+    {
+      "name": "Tool Fluency",
+      "description": "Covers a designer's ability to effectively use a wide range of tools, including design, prototyping, data analysis, and presentation tools, to enhance collaboration and user value.",
+      "criteria": [
+        "Proficiency: Demonstrates skill with a variety of design tools beyond Figma.",
+        "Adaptability: Quickly learns and applies new tools to improve workflows.",
+        "Collaboration: Uses tools effectively to share and iterate with cross-functional teams.",
+        "Innovation: Employs advanced features and integrations to streamline processes.",
+        "Communication: Presents work clearly using appropriate tools for the audience."
+      ]
+    }
+  ]
+}

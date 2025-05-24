@@ -11,16 +11,9 @@
     <h1>Self-evaluation tool: Estimated UX Proficiency</h1>
     <div id="evaluation-form">
         <div id="domains">
-            <div class="domain" id="domain-1">
-                <div class="label-and-slider">
-                    <label class="domain-lab" for="domain-1-input">Information Architecture</label>
-                    <input type="range" min="1" max="5" value="1" id="domain-1-input">
-                    <span class="proficiency-value">1</span>
-                </div>
-                <p class="description" id="description-1"></p>
-            </div>
-            <!-- Repeat for other domains... -->
+            <!-- Domains will be dynamically rendered here by JS -->
         </div>
+        <h2 style="display:none;">Estimated Proficiency: <span id="total-proficiency">7</span></h2>
     </div>
     <div class="visualization-outer">
         <div id="visualization-inner">
@@ -37,21 +30,5 @@
         </div>
     </div>
     <script src="function.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch("domains.json")
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach((item, index) => {
-                        const descElement = document.getElementById(`description-${index + 1}`);
-                        if (descElement) {
-                            // Convert fullDescription array to HTML with bullets
-                            const fullDescriptionHTML = item.fullDescription.map(line => `<li>${line}</li>`).join('');
-                            descElement.innerHTML = `<strong>${item.shortDescription}</strong><ul>${fullDescriptionHTML}</ul>`;
-                        }
-                    });
-                });
-        });
-    </script>
 </body>
 </html>

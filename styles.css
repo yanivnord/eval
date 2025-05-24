@@ -4,6 +4,7 @@
         margin: 0 auto;
         padding: 0 auto;
         font-weight: 400;
+        line-height: 140%
     }
 
     h1,h2,h3,h4 {
@@ -26,33 +27,43 @@
     #evaluation-form {
         margin-top: 40px;
         padding: 10px;
-        height:100%;
+        height: 100%;
         width: 65%;
+        max-width: calc(100vw - 38vw);
+        box-sizing: border-box;
     }
     .domain {
-        margin-top: 1rem;
+        margin-top: 2.2rem;
+        padding-bottom: 1.2rem;
+        border-bottom: 1px solid #ececec;
     }
 
     .domain:first-child{
         margin-top: 0px;
     }
 
+    .domain:last-child {
+        border-bottom: none;
+    }
+
     .label-and-slider {
         padding-right: 2rem;
-        padding-top: 1rem;
+        padding-top: 1.2rem;
         border-top: 1px solid #eee;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 0px; /* Space between slider row and description */
+        margin-bottom: 0px;
+        gap: 1.2rem;
     }
 
     .domain-lab {
-        font-weight: 400;
-        font-size: 1.3rem;
-        margin-right: auto; /* Pushes the slider and proficiency value to the right */
+        font-weight: 500;
+        font-size: 1.18rem;
+        margin-right: auto;
         white-space: nowrap;
-        overflow:hidden;
+        overflow: hidden;
+        color: #282828;
     }
 
     label {
@@ -62,13 +73,11 @@
 
     .description {
         padding-right: 2rem;
-        font-size: .92rem;
-        line-height: 1.4rem;
-        letter-spacing: 1px;
-        margin-bottom: 0;
-        margin-top: .5rem;
-        position: relative;
-        color:#515151;
+        font-size: 1rem;
+        letter-spacing: 0.2px;
+        margin-bottom: 0.2rem;
+        margin-top: 0.7rem;
+        color: #515151;
     }
 
     .ellipsis {
@@ -94,7 +103,9 @@
 /********** Range Input Styles **********/
     /*Range Reset*/
     input[type="range"] {
-        min-width: 16rem; /* Adjust width if needed */
+        min-width: 14rem;
+        max-width: 18rem;
+        flex: 1 1 180px;
         -webkit-appearance: none;
         appearance: none;
         background: transparent;
@@ -104,13 +115,16 @@
 
     input[type="range"],
     .proficiency-value {
-        margin-left: 10px;
+        margin-left: 18px;
     }
 
     .proficiency-value {
-        font-size:1.5rem;
-        font-weight:400;
-        margin-left: 10px; /* 10px space between slider and value */
+        font-size: 1.35rem;
+        font-weight: 500;
+        margin-left: 18px;
+        color: #6953C1;
+        min-width: 2.2rem;
+        text-align: center;
     }
 
     /* Removes default focus */
@@ -147,19 +161,22 @@
     .visualization-outer {
         z-index: 11;
         position: fixed;
-        height: -webkit-fill-available;
+        height: 100vh;
         width: 35%;
-        top:0;
-        right:0;
+        top: 0;
+        right: 0;
         background: #fff;
-        border-left: 1px solid #fff;
+        border-left: 1px solid #f3f3f3;
         padding-top: 60px;
         padding-bottom: 60px;
-        margin-bottom:10px;
-        padding-left:0px;
-        padding-right:0px;
+        margin-bottom: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
         overflow: hidden;
         box-shadow: -3px 0px 8px 0px rgba(0, 0, 0, 0.06);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     #visualization-inner {
@@ -167,38 +184,310 @@
         height: 100%;
         width: 100%;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .gradient-overlay {
         position: absolute;
         width: 100%;
-        background: linear-gradient(180deg,transparent, #EBE2FF, transparent);
+        background: linear-gradient(180deg,transparent, #E1F4FC, transparent);
         justify-content: center;
         align-items: center;
         align-content: center;
         flex-direction: column;
         transition: top 0.3s ease, height 0.3s ease;
-        border: 0px solid #FF0000;
         z-index: 0;
         color: #282828;
+        display: flex;
+        min-height: 120px;
     }
 
     .grade-label {
         position: absolute;
         right: 15px;
-        font-size: .85rem;
+        font-size: 1rem;
         color: #515151;
-        font-weight: 200;
-        width:280px;
+        font-weight: 400;
+        width: 220px;
         text-align: right;
+        opacity: 0.85;
     }
 
     div.totalNumber{
-        font-size: 2.25rem;
-        font-weight: 400;
+        font-size: 3rem;
+        font-weight: 500;
+        color: #008DC9;
+        margin-bottom: 1.25rem;
     }
 
     div.yourEstimate{
-        font-size: .9rem;
-        font-weight:300;
+        font-size: 1.08rem;
+        font-weight: 400;
+        color: #282828;
+        opacity: 0.85;
     }
+
+/********** Collapsible Criteria Styles **********/
+.criteria-toggle {
+    background: none;
+    border: none;
+    color: #6953C1;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0;
+    transition: color 0.2s;
+    outline: none;
+    display: inline-block;
+}
+.criteria-toggle:hover, .criteria-toggle:focus {
+    color: #4B3295;
+    text-decoration: underline;
+}
+
+.criteria-list {
+    margin: 0.5rem 0 1rem 1.2rem;
+    padding-left: 1.2rem;
+    font-size: 0.97rem;
+    color: #444;
+    transition: max-height 0.3s ease;
+    list-style: disc outside;
+}
+
+li.criterion {
+    margin-bottom: 0.5rem;
+}
+
+/********** Domain Row Layout **********/
+.domain-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid #ececec;
+    gap: 2.5rem;
+    box-sizing: border-box;
+}
+.domain-row:first-child {
+    margin-top: 0;
+}
+.domain-row:last-child {
+    border-bottom: none;
+}
+.domain-text {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 60%;
+}
+.domain-slider {
+    flex: 0 0 320px;
+    min-width: 260px;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+    margin-right: 1.5rem;
+}
+.slider-labels {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.2rem;
+}
+.slider-label {
+    font-size: 0.93rem;
+    color: #888;
+    font-weight: 400;
+    opacity: 0.85;
+}
+.slider-label-novice {
+    text-align: left;
+}
+.slider-label-master {
+    text-align: right;
+}
+.slider-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input[type="range"] {
+    width: 100%;
+    min-width: 180px;
+    max-width: 260px;
+    margin: 0 0.5rem;
+    accent-color: #00A1E6;
+}
+input[type="range"]::-webkit-slider-thumb {
+    background-color: #00A1E6;
+}
+input[type="range"]::-moz-range-thumb {
+    background-color: #00A1E6;
+}
+input[type="range"]::-ms-thumb {
+    background-color: #00A1E6;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #eee;
+}
+input[type="range"]:focus::-webkit-slider-thumb {
+    border: 1px solid #008fc1;
+    outline: 2px solid #008fc1;
+}
+.proficiency-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #00A1E6;
+    margin-top: 0.3rem;
+    margin-left: 0;
+    min-width: 2.2rem;
+    text-align: center;
+}
+
+/********** Slider Row and Value Styles **********/
+.slider-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 0.7rem;
+    margin-bottom: 0.2rem;
+}
+.slider-label {
+    font-size: 0.95rem;
+    color: #888;
+    font-weight: 400;
+    opacity: 0.85;
+    min-width: 70px;
+    text-align: center;
+    user-select: none;
+}
+.slider-label-novice {
+    text-align: left;
+}
+.slider-label-master {
+    text-align: right;
+}
+.slider-row input[type="range"] {
+    flex: 1 1 0;
+    margin: 0 0.2rem;
+    min-width: 120px;
+    max-width: 220px;
+    accent-color: #00A1E6;
+}
+.slider-value-row {
+    position: relative;
+    width: 100%;
+    height: 1.7em;
+    margin-top: 0.1em;
+}
+.slider-value {
+    position: absolute;
+    top: 0.2em;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #00A1E6;
+    background: #fff;
+    padding: 0 0.3em;
+    border-radius: 0.4em;
+    pointer-events: none;
+    transition: left 0.15s;
+    min-width: 2.2rem;
+    text-align: center;
+}
+
+/********** Criteria Header Styles **********/
+.criteria-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 0.7em;
+    margin-bottom: 0.2em;
+    user-select: none;
+}
+.chevron {
+    transition: transform 0.25s;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+}
+.chevron.expanded {
+    transform: rotate(90deg);
+}
+.criteria-label {
+    font-weight: 500;
+    font-size: 1.08em;
+    color: #282828;
+}
+
+/********** Remove old .label-and-slider if not used **********/
+.label-and-slider { display: none !important; }
+
+/********** Responsive Layout **********/
+@media (max-width: 1100px) {
+    #evaluation-form {
+        width: 100%;
+        max-width: 100vw;
+        padding-right: 0;
+    }
+    .domain-row {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    .domain-text, .domain-slider {
+        max-width: 100%;
+        width: 100%;
+    }
+    .domain-slider {
+        align-items: flex-start;
+        margin-right: 0;
+    }
+    .slider-row input[type="range"] {
+        min-width: 100px;
+        max-width: 100%;
+    }
+}
+@media (max-width: 700px) {
+    #evaluation-form {
+        padding: 0.5rem;
+    }
+    .label-and-slider {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .proficiency-value {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+    .visualization-outer {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .grade-label {
+        width: 120px;
+        font-size: 0.9rem;
+    }
+    .domain-row {
+        gap: 0.7rem;
+    }
+    .domain-slider {
+        min-width: 0;
+        max-width: 100%;
+    }
+    .slider-labels {
+        font-size: 0.85rem;
+    }
+}
