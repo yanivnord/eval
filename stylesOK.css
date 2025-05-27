@@ -22,7 +22,7 @@
         position: fixed;
         background-color: #fff;
         width: 100%;
-        z-index: 1;
+        z-index: 10;
         border-bottom: 1px solid #F0F0F0;
     }
 
@@ -31,9 +31,9 @@
 /* main outer container for left side of page */
     #evaluation-form {
         margin-top: 3rem;
-        padding: 1.5rem 3rem 1.5rem 2rem;
+        padding: 1.5rem 0rem 1.5rem 2rem;
         height: 100%;
-        width: 65%;
+        width: 75%;
         box-sizing: border-box;
     }
 
@@ -54,26 +54,32 @@
 /* domain row */
     .domain-row {
         display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
         width: 100%;
         padding: 1.5rem 0;
         border-bottom: 1px solid #ececec;
+        gap: 1rem;
         box-sizing: border-box;
     }
 
     .domain-row:last-child {
         border-bottom: none;
     }
-
+    .domain-text {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 60%;
+    }
 
 /* criteria styles */
     .criteria-header {
         display: flex;
         align-items: center;
         cursor: pointer;
-        margin-top: 0.5em;
+        margin-top: 0.7em;
+        margin-bottom: 0.2em;
         user-select: none;
     }
     .chevron {
@@ -92,12 +98,12 @@
         color: #282828;
     }
     .criteria-list {
-        margin: 0.5rem .5rem 0;
-        padding-left: 1.75rem;
-        font-size: 1rem;
+        margin: 0.5rem 1rem 0;
+        padding-left: 1.2rem;
+        font-size: 0.97rem;
+        color: #444;
         transition: max-height 0.3s ease;
         list-style: circle outside;
-        border-left: 1px solid #f0f0f0;
     }
     li.criterion {
         margin-bottom: 0.3rem;
@@ -108,18 +114,18 @@
 
 /* slider container */
 .domain-slider {
-    flex: 0 0 0;
-    width: 375px;
+    flex: 0 0 56px;
+    min-width: 260px;
+    max-width: 340px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 0.5rem;
     margin-right: 1.5rem;
-    padding: 0.75rem 0;
 }
 
 .slider-labels {
-    color: #282828;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -130,6 +136,7 @@
 .slider-label {
     font-size: 0.75rem;
     text-transform: uppercase;
+    color: #888;
     font-weight: 400;
 }
 
@@ -158,8 +165,9 @@
 
 .slider-label {
     font-size: 0.75rem;
-    color: #282828;
+    color: #888;
     font-weight: 400;
+    opacity: 0.85;
     text-align: center;
     user-select: none;
 }
@@ -174,24 +182,16 @@
 
 .slider-value {
     position: absolute;
-    height: 25px;
-    width: 25px;
-    top: -6px;
-    left: 1px;
-    left: 0;
-    background: #00A1E6;
-    border: 1px solid #fff;
-    color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 500;
-    padding: 0;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: #00A1E6;
+    background: #fff;
+    padding: 0 0.3em;
+    border-radius: 0.4em;
     pointer-events: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    z-index: 2;
+    transition: left 0.15s;
+    min-width: 2.2rem;
+    text-align: center;
 }
 
 /* Range input styling - this is the actual slider */
@@ -211,55 +211,27 @@ input[type="range"]:focus {
 
 /* Slider Thumb Webkit */
 input[type="range"]::-webkit-slider-thumb {
-    height: 25px;
-    width: 25px;
-    -webkit-appearance: none;
+    -webkit-appearance: none; /* Override default look */
     appearance: none;
-    margin-top: -7px;
-    border-radius: 100%;
-    background-color: #fff;
-    border: none;
-    position: relative;
-    box-shadow: none;
-}
-
-input[type="range"][data-value]::-webkit-slider-thumb::after {
-    content: attr(data-value);
-    display: block;
-    color: #fff;
-    width: 100%;
-    text-align: center;
+    margin-top: -2.5px; /* Centers thumb on the track */
+    /*custom styles*/
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 1.2rem;
+    background-color: #00A1E6;
+    border: 1px solid #00A1E6
+    outline: 2px #ffffff;
+    outline-offset: 0.125rem; 
 }
 
 /* Slider Thumb  Mozilla */
 input[type="range"]::-moz-range-thumb {
-    height: 25px;
-    width: 25px;
-    border-radius: 100%;
-    background: transparent;
-    border: none;
-    position: relative;
-    box-shadow: none;
-}
-input[type="range"][data-value]::-moz-range-thumb::after {
-    content: attr(data-value);
-    color: #fff;
-    font-size: 1.3rem;
-    font-weight: 600;
-    width: 100%;
-    text-align: center;
-    line-height: 2.2rem;
+    background-color: #00A1E6;
 }
 
 /* Slider Thumb Microsoft */
 input[type="range"]::-ms-thumb {
-    height: 2.2rem;
-    width: 3.2rem;
-    border-radius: 1.1rem;
-    background: transparent;
-    border: none;
-    position: relative;
-    box-shadow: none;
+    background-color: #00A1E6;
 }
 
 /* Slider Track Webkit */
@@ -271,10 +243,8 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 /* Focus thumb Webkit */
 input[type="range"]:focus::-webkit-slider-thumb {
+    border: 1px solid #008fc1;
     outline: 2px solid #008fc1;
-    background-color: #fff;
-    outline-offset: 2px;
-    margin-top: -5px;
 }
 
 /* Focus thumb Mozilla */
@@ -289,36 +259,40 @@ input[type="range"]:focus::-ms-thumb {
     outline: 2px solid #008fc1;
 }
 
+
 /********** Right side of page **********/
 
     /* main outer container for right side of page */
     .visualization-outer {
-        z-index: 2;
+        z-index: 11;
         position: fixed;
         height: 100vh;
-        width: 35%;
+        width: 25%;
         top: 0;
         right: 0;
         background: #fff;
-        border-left: 1px solid #f0f0f0;
+        border-left: 1px solid #f3f3f3;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        margin-bottom: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
         overflow: hidden;
         box-shadow: -3px 0px 8px 0px rgba(0, 0, 0, 0.06);
         display: flex;
         flex-direction: column;
-        flex-basis: 100%;
         align-items: center;
-        box-sizing: border-box;
     }
 
     /* main inner container for right side of page */
     #visualization-inner {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        text-align: center;
         display: flex;
         flex-direction: column;
-        flex-basis: 100%;
-        width: 100%;
-        align-items: flex-end;
-        position: relative;
-        text-align: center;
+        align-items: center;
         justify-content: center;
     }
 
@@ -326,104 +300,98 @@ input[type="range"]:focus::-ms-thumb {
     .gradient-overlay {
         position: absolute;
         width: 100%;
-        background: linear-gradient(0, #fff, #C2EDFF, #fff);
+        background: linear-gradient(180deg,transparent, #E1F4FC, transparent);
         justify-content: center;
         align-items: center;
         align-content: center;
         flex-direction: column;
         transition: top 0.3s ease, height 0.3s ease;
+        z-index: 0;
+        color: #282828;
         display: flex;
-        color: #007DB2;
+        min-height: 120px;
+    }
 
+    /* grade label for right side of page */
+    .grade-label {
+        position: absolute;
+        right: 15px;
+        font-size: 1rem;
+        color: #515151;
+        font-weight: 400;
+        width: 220px;
+        text-align: right;
+        opacity: 0.85;
     }
 
     /* total number for right side of page */
     div.totalNumber{
-        font-size: 2.2rem;
-        font-weight: 300;
-        padding: 1.25rem 0;
+        font-size: 3rem;
+        font-weight: 500;
+        color: #008DC9;
+        margin-bottom: 1.25rem;
     }
 
     /* your estimate for right side of page */
-    div.yourEstimate {
-        font-size: .8rem;
-        line-height: 1rem;
+    div.yourEstimate{
+        font-size: 1.08rem;
         font-weight: 400;
+        color: #282828;
         opacity: 0.85;
-        width: 100%;
-        text-align: center;
     }
-
-    div.line {
-        position: absolute;
-        top: 60%;
-        z-index: 0;
-        width: 40%;
-        height: 1px;
-        margin: auto auto 0;
-        content: '';
-        opacity: 30%;
-        border-bottom: 1px dashed #00A1E6;
-    }    
-
-    .grade-markers-outer {
-        position: relative;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-basis: 100%;
-        align-items: flex-end;
-        justify-content: space-between;
-        padding: 10vh 1rem;
-    }
-
-    .grade {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-        line-height: 1;
-        gap: 0.4rem;
-    }
-
-    .grade-label {
-        font-size: .85rem;        
-        font-weight: 500;
-    }
-
-    .grade-label-caption {
-        font-size: 0.65rem;
-        color: #515151;
-        font-weight: 300;
-    }
-
-
 /********** Responsive Layout **********/
 
+    /* mobile layout */
+@media (max-width: 1100px) {
+    #evaluation-form {
+        width: 75%;
+        max-width: 75%;
+        padding-right: 3em;
+    }
+    .domain-row {
+        flex-direction: column;
+        gap: 0rem;
+    }
+    .domain-text, .domain-slider {
+        max-width: 100%;
+        width: 100%;
+    }
+    .domain-slider {
+        align-items: flex-start;
+        margin-right: 0;
+        margin-top:0;
+    }
+    .slider-row input[type="range"] {
+        flex: 1 1 0;
+        margin: 0 0.2rem;
+        min-width: 120px;
+        accent-color: #00A1E6;
+    }
+}
 @media (max-width: 700px) {
-    .visualization-outer {
-        display: none;
-    }
-
-    h1 {
-        padding: 1rem .5rem;
-    }
-
     #evaluation-form {
         padding: 0.5rem;
-        width:100%;
     }
-
+    .label-and-slider {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
     .proficiency-value {
         margin-left: 0;
         margin-top: 0.5rem;
     }
-
     .visualization-outer {
         padding-top: 20px;
         padding-bottom: 20px;
     }
-
+    .grade-label {
+        width: 120px;
+        font-size: 0.9rem;
+    }
+    .domain-row {
+        gap: 0.7rem;
+    }
     .domain-slider {
         min-width: 0;
         max-width: 100%;
