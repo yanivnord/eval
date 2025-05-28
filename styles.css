@@ -47,13 +47,9 @@
     --font-letter-spacing-loose: 0.25px;
     --font-letter-spacing-x-loose: 0.5px;
 
-    *:focus {
-        outline: none;
-    }
-
-    *:focus-visible {
+    *:focus-visible, *:focus {
         outline: 1px solid var(--color-border-brand);
-        outline-offset: 2px;
+        outline-offset: 1px;
     }
 }
 
