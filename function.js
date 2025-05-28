@@ -29,18 +29,34 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderDiv.className = 'domain-slider';
         const sliderRow = document.createElement('div');
         sliderRow.className = 'slider-row';
+        
+        // Novice label with tooltip
+        const noviceLabelWrap = document.createElement('span');
+        noviceLabelWrap.className = 'slider-label-with-tooltip';
         const noviceLabel = document.createElement('span');
         noviceLabel.className = 'slider-label slider-label-novice';
         noviceLabel.textContent = 'Novice';
+        const noviceTooltip = document.createElement('div');
+        noviceTooltip.className = 'slider-label-tooltip';
+        noviceTooltip.innerHTML = '<h4 class="margin-block-zero">A novice...</h4><ul class="slider-tooltip-list margin-block-zero"><li class="slider-tooltip-list-item">Rarely operates with autonomy</li><li class="slider-tooltip-list-item">Is still learning our user experience standards</li><li class="slider-tooltip-list-item">Seeks much guidance</li></ul>';
+        noviceLabelWrap.appendChild(noviceLabel);
+        noviceLabelWrap.appendChild(noviceTooltip);
+
+        // Master label with tooltip
+        const masterLabelWrap = document.createElement('span');
+        masterLabelWrap.className = 'slider-label-with-tooltip';
         const masterLabel = document.createElement('span');
         masterLabel.className = 'slider-label slider-label-master';
         masterLabel.textContent = 'Master';
+        const masterTooltip = document.createElement('div');
+        masterTooltip.className = 'slider-label-tooltip';
+        masterTooltip.innerHTML = '<h4 class="margin-block-zero">A master...</h4><ul class="slider-tooltip-list margin-block-zero"><li class="slider-tooltip-list-item">Operates with much autonomy</li><li class="slider-tooltip-list-item">Helps define our user experience standards</li><li class="slider-tooltip-list-item">Mentors and inspires others</li></ul>';
+        masterLabelWrap.appendChild(masterLabel);
+        masterLabelWrap.appendChild(masterTooltip);
+
+        // Slider and value
         const sliderWrapper = document.createElement('div');
         sliderWrapper.className = 'slider-input-wrapper';
-        sliderWrapper.style.position = 'relative';
-        sliderWrapper.style.flex = '1 1 0';
-        sliderWrapper.style.display = 'flex';
-        sliderWrapper.style.alignItems = 'center';
         const slider = document.createElement('input');
         slider.type = 'range';
         slider.min = 1;
@@ -57,9 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
         valueSpan.style.position = 'absolute';
         valueSpan.style.pointerEvents = 'none';
         sliderWrapper.appendChild(valueSpan);
-        sliderRow.appendChild(noviceLabel);
+
+        sliderRow.appendChild(noviceLabelWrap);
         sliderRow.appendChild(sliderWrapper);
-        sliderRow.appendChild(masterLabel);
+        sliderRow.appendChild(masterLabelWrap);
         sliderDiv.appendChild(sliderRow);
         rowDiv.appendChild(sliderDiv);
 
@@ -81,8 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const criteriaLabel = document.createElement('span');
         criteriaLabel.className = 'criteria-label';
         criteriaLabel.textContent = 'Criteria for evaluation';
-        criteriaLabel.style.fontWeight = '500';
-        criteriaLabel.style.fontSize = '1.em';
         criteriaHeader.appendChild(chevron);
         criteriaHeader.appendChild(criteriaLabel);
         const criteriaList = document.createElement('ul');
@@ -91,7 +106,19 @@ document.addEventListener('DOMContentLoaded', () => {
         domain.criteria.forEach(crit => {
             const li = document.createElement('li');
             li.className = 'criterion';
-            li.textContent = crit;
+            // Split at the first colon
+            const colonIdx = crit.indexOf(':');
+            if (colonIdx !== -1) {
+                const shortName = crit.slice(0, colonIdx + 1);
+                const desc = crit.slice(colonIdx + 1);
+                const strong = document.createElement('span');
+                strong.className = 'criterion-short';
+                strong.textContent = shortName + ' ';
+                li.appendChild(strong);
+                li.appendChild(document.createTextNode(desc.trim()));
+            } else {
+                li.textContent = crit;
+            }
             criteriaList.appendChild(li);
         });
         function toggleCriteria() {
