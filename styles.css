@@ -465,8 +465,8 @@ input[type="range"]:focus::-ms-thumb {
         height: 1px;
         margin: auto auto 0;
         content: '';
-        opacity: 30%;
-        border-bottom: 1px dashed var(--color-border-brand);
+        opacity: 100;
+        border-bottom: 1px dashed var(--color-border-dark);
     }    
 
     .grade-markers-outer {
