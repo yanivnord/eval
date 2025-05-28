@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Self-Evaluation Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Self-evaluation tool: Estimated UX Proficiency</h1>
+    <div id="evaluation-form">
+        <div id="domains">
+            <!-- Domains will be dynamically rendered here by JS -->
+        </div>
+        <h2 style="display:none;">Estimated Proficiency: <span id="total-proficiency">7</span></h2>
+    </div>
+    <div class="visualization-outer">
+        <div id="visualization-inner">
+            <div id="gradientOverlay" class="gradient-overlay">
+                <div class="line"></div>
+                <div id="totalNumber" class="totalNumber">7</div>
+                <div class="yourEstimate">My <strong>estimated</strong><br>proficiency (sum)</div>
+            </div>
+            <div class="grade-markers-outer">
+                <div class="grade">
+                    <div class="grade-label">Grade 10</div>
+                    <div class="grade-label-caption">Range: 33+</div>
+                </div>
+                <div class="grade">
+                    <div class="grade-label">Grade 9</div>
+                    <div class="grade-label-caption">Range: 26-33</div>
+                </div>
+                <div class="grade">
+                    <div class="grade-label">Grade 8</div>
+                    <div class="grade-label-caption">Range: 21-28</div>
+                </div>
+                    <div class="grade">
+                    <div class="grade-label">Grade 7</div>
+                    <div class="grade-label-caption">Range: 16-23</div>
+                </div>
+                <div class="grade">
+                    <div class="grade-label">Grade 6</div>
+                    <div class="grade-label-caption">Range: 11-18</div>
+                </div>
+                <div class="grade">
+                    <div class="grade-label">Grade 5</div>
+                    <div class="grade-label-caption">Range: 7-13</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="function.js"></script>
+</body>
+</html>
